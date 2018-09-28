@@ -1,3 +1,11 @@
 .wrapper{
     text-align: center;
+    margin:auto;
+}
+
+#login_div,
+#user_div,
+#userPref_div{
+    text-align: center;
+    margin:auto;
 }

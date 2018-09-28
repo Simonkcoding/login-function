@@ -22,6 +22,7 @@
 
         <div class="login" id="login_div">
             <h2>firebase web login example</h2><br>
+            <input type="username" placeholder="Your name" id="name-field" /><br>
             <input type="email" placeholder="Email..." id="email-field" /><br>
             <input type="password" placeholder="Password..." id="password-field" /><br>
             <p id="firebase-message"></p>
@@ -29,6 +30,8 @@
             <button class="btn btn-lg" id="createAcc-btn">Create an account</button>
             <p>aaa@aaa.com</p>
             <p>aaa1234</p>
+            <p>fatub@nada.email</p>
+            <p>123456</p>
         </div>
 
         <div class="logged-div" id="user_div" style="display:none">
@@ -37,6 +40,16 @@
             <p id="fb-message"></p>
             <button class="btn btn-lg" id="sendVeri-btn">Send Verification</button>
             <button class="btn btn-lg" id="logout-btn">logout to account</button>
+        </div>
+
+        <div class="push-div" id="userPref_div" style="display:none">
+            <h2>What is in your mind?</h2>
+            <p>Your favorite artist</p><input type="artist" placeholder="name your artist" id="artist-field" /><br>
+            <p>Artist's show location</p><input type="location" placeholder="where's the show" id="location-field" /><br>
+            <p id="userError-text"></p>
+            <p id="fbError-message"></p>
+            <button class="btn btn-lg" id="push-btn">Push things to firebase</button>
+            <!-- <button class="btn btn-lg" id="remove-btn">Remove things from firebase</button> -->
         </div>
 
         <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
