@@ -22,78 +22,37 @@
 
         <div class="login" id="login_div">
             <h2>firebase web login example</h2><br>
-            <input type="email" placeholder="Email..." id="email-field"><br><br>
-            <input type="password" placeholder="Password..." id="password-field"><br><br>
+            <input type="email" placeholder="Email..." id="email-field" /><br>
+            <input type="password" placeholder="Password..." id="password-field" /><br>
+            <p id="firebase-message"></p>
             <button class="btn btn-lg" id="login-btn">login to account</button>
-        <p>aaa@aaa.com</p>
-        <p>aaa1234</p>
+            <button class="btn btn-lg" id="createAcc-btn">Create an account</button>
+            <p>aaa@aaa.com</p>
+            <p>aaa1234</p>
         </div>
 
         <div class="logged-div" id="user_div" style="display:none">
             <h2>welcome user</h2>
-            <h3>welcome back!</h3>
+            <p id="userId-text"></p>
+            <p id="fb-message"></p>
+            <button class="btn btn-lg" id="sendVeri-btn">Send Verification</button>
             <button class="btn btn-lg" id="logout-btn">logout to account</button>
         </div>
 
-
         <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
         <script>
-
             // Initialize Firebase
             var config = {
-                apiKey: "AIzaSyCGMyKJKj1nw0WTk7Dd9nfWYiFQMvMpqk8",
-                authDomain: "group-project-sandbox.firebaseapp.com",
-                databaseURL: "https://group-project-sandbox.firebaseio.com",
-                projectId: "group-project-sandbox",
-                storageBucket: "group-project-sandbox.appspot.com",
-                messagingSenderId: "946452356138"
+                apiKey: "AIzaSyCi5XqbAdfXV9xrLdO_vyb5cu1WbzD7ezE",
+                authDomain: "travelgroupie-74ca0.firebaseapp.com",
+                databaseURL: "https://travelgroupie-74ca0.firebaseio.com",
+                projectId: "travelgroupie-74ca0",
+                storageBucket: "travelgroupie-74ca0.appspot.com",
+                messagingSenderId: "233607634113"
             };
-
             firebase.initializeApp(config);
-
-            firebase.auth().onAuthStateChanged(function (user) {
-                if (user) {
-                    $('#login_div').css("display", "none")
-                    $('#user_div').css("display", "block");
-                    // User is signed in.
-                } else {
-                    $('#login_div').css("display", "block");
-                    $('#user_div').css("display", "none");
-
-
-
-                    // No user is signed in.
-                }
-            });
-
-
-            $('#login-btn').on("click", function login() {
-                var userEmail = $('#email-field').val();
-                var userPw = $("#password-field").val();
-
-                firebase.auth().signInWithEmailAndPassword(userEmail, userPw).catch(function (error) {
-                    // Handle Errors here.
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-
-                    alert('spam');
-                    // ...
-                });
-
-
-            })
-
-            $('#logout-btn').on("click", function login() {
-
-                firebase.auth().signOut().then(function () {
-                    // Sign-out successful.
-                }).catch(function (error) {
-                    // An error happened.
-                });
-
-            })
         </script>
-
+        <script src="main.js"></script>
 </body>
 
 </html>
